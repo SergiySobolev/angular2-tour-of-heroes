@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent} from './heroes.component';
-import { DashboardComponent} from './dashboard.component';
+import { DashboardComponent} from './dashboard/dashboard.component';
 
 const routes : RouterConfig = [
     {
