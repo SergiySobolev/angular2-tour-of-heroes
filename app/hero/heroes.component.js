@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_detail_component_1 = require('./hero-detail/hero-detail.component');
+var hero_detail_component_1 = require('./../hero-detail/hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var HeroesComponent = (function () {
     function HeroesComponent(router, heroService) {
@@ -32,8 +32,8 @@ var HeroesComponent = (function () {
     HeroesComponent = __decorate([
         core_1.Component({
             selector: 'my-heroes',
-            templateUrl: 'app/heroes.component.html',
-            styleUrls: ['app/heroes.component.css'],
+            templateUrl: 'app/hero/heroes.component.html',
+            styleUrls: ['app/hero/heroes.component.css'],
             directives: [hero_detail_component_1.HeroDetailComponent]
         }), 
         __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
