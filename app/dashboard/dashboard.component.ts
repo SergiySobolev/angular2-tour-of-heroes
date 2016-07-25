@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 
 import { Hero } from './../hero/hero';
 import { HeroService } from './../hero/hero.service';
+import { HeroSearchComponent } from './../hero-search/hero-search.component';
 
 @Component({
     selector: 'my-dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
-    styleUrls:  ['app/dashboard/dashboard.component.css']
+    styleUrls:  ['app/dashboard/dashboard.component.css'],
+    directives: [HeroSearchComponent]
 })
 
 export class DashboardComponent implements OnInit {
