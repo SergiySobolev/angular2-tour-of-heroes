@@ -13,6 +13,8 @@ import { HeroService } from './hero.service';
 })
 export class HeroesComponent implements OnInit{
     title = 'Tour of Heroes';
+    addingHero = false;
+    error: any;
     public heroes : Hero[];
     selectedHero: Hero;
 
@@ -21,6 +23,27 @@ export class HeroesComponent implements OnInit{
         private heroService: HeroService) { }
 
     onSelect(hero: Hero) { this.selectedHero = hero; }
+
+    addHero() {
+        this.addingHero = true;
+        this.selectedHero = null;
+    }
+
+    public deleteHero(hero: Hero, event: any) {
+        event.stopPropagation();
+        this.heroService
+            .delete(hero)
+            .then(res => {
+                this.heroes = this.heroes.filter(h => h !== hero);
+                if (this.selectedHero === hero) { this.selectedHero = null; }
+            })
+            .catch(error => this.error = error);
+    }
+
+    close(savedHero: Hero) {
+        this.addingHero = false;
+        if (savedHero) { this.getHeroes(); }
+    }
     ngOnInit() {
         this.getHeroes();
     }
